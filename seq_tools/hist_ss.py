@@ -61,6 +61,10 @@ def get_hist_ss(test_seq,type='Unknown',debug=0):
     #Numbering differes between symmetrical chains and 1kx5 vs 1aoi.
     #We simply take the minimum length of alpha helices over all chains in 1kx5
     #1 substructed from PDB values!!! because these values are in array index numberins starting from 0
+    
+    #docking domain (amino acids 80 – 119) from paper by Luger 1aoi, however in JMB paper we defined it as 80-118, probably to be at the trypsin cleavage site KK???, so we stick with this here. Although HistoneDB uses the Luger convention (albite with a bug - it starts with 81 - that was fixed in code now).
+    
+    
     ss_templ_H3={'alphaN':[43,56],'alpha1':[62,76],'alpha2':[84,113],'alpha3':[119,130],'loopL1':[78,83],'loopL2':[114,118],'beta1':[82,83],'beta2':[117,118],'mgarg1':[62,62],'mgarg2':[82,82],'mgarg3':[48,48]}
     ss_templ_H4={'alpha1ext':[23,28],'alpha1':[29,40],'alpha2':[48,75],'alpha3':[81,92],'loopL1':[41,47],'loopL2':[76,81],'beta1':[44,45],'beta2':[79,80],'beta3':[95,97],'mgarg1':[44,44]}
     # ss_templ_H2A={'alpha1ext':[15,21],'alpha1':[25,36],'alpha2':[45,72],'alpha3':[78,88],'alpha3ext':[89,96],'loopL1':[37,44],'loopL2':[73,77],'beta1':[41,42],'beta2':[76,77],'beta3':[99,101],'docking domain':[91,107],'docking tail':[108,116],'mgarg1':[41,41],'mgarg2':[76,76]}
