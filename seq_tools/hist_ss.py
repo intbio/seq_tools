@@ -144,7 +144,8 @@ def get_hist_ss(test_seq,type='Unknown',debug=0):
 # print('Needle alignment')
 
     align = AlignIO.read(txt_file, "emboss")
-    if(1): print(align)
+    if(debug):
+        print(align)
     # print(hsp.gaps)
     #Blast checking
     # ss_test=dict()
@@ -287,7 +288,8 @@ def get_hist_ss_in_aln_for_html(alignment,type='Unknown',debug=0):
 def get_hist_ss_in_aln_for_shade(alignment,below=False,type='Unknown',debug=0):
     """ gets a features dict suitable for L_shade_aln"""
     hv,ss=get_hist_ss_in_aln(alignment,type,debug)
-    print("Type detected=",hv)
+    if(debug):
+        print("Type detected=",hv)
     features4shade=list()
     for k,v in ss.items():
         if k[0:5]=='alpha':
@@ -366,3 +368,4 @@ if __name__ == '__main__':
     H2At = Seq("SGRGKQGGKTRAKAKTRSSRAGLQFPVGRVHRLLRKGNYAERVGAGAPVYLAAVLEYLTAEILELAGNAARDNKKTRIIPRHLQLAVRNDEELNKLLGRVTIAQGGVLPNIQSVLLPKKTESSKSKSK", IUPAC.protein)
     print(get_hist_ss(H2At))
     # print get_core_lendiff(H2A,H2At)
+
